@@ -2,7 +2,7 @@
 
 ## Stages
 
-- Create infra-uhuu network
+- Create beers-styles network
 - Build all
 - Run docker-compose
 
