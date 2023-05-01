@@ -32,4 +32,7 @@ unset BUILD_ENV; export BUILD_ENV=local; docker-compose -f devops/docker-compose
 #back-end
 http://localhost:3000/
 
+#API Documentation
+http://localhost:3000/api
+
 ```

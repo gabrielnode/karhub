@@ -6,12 +6,15 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { TemperatureService } from './temperature.service';
+import { TemperatureSwagger } from './temperature.swagger';
 
 @Controller('temperature')
+@TemperatureSwagger.apiTags()
 export class TemperatureController {
   constructor(private readonly temperatureService: TemperatureService) {}
 
   @Get()
+  @TemperatureSwagger.findBestBeerStyleAndPlaylist()
   async findBestBeerStyleAndPlaylist(
     @Query('temp') temp: number,
   ): Promise<{ beerStyle: string; playlist: any }> {

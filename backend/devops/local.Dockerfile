@@ -5,6 +5,9 @@ RUN yarn global add @nestjs/cli
 
 WORKDIR /app
 COPY --chown=node:node . .
+
+RUN rm -rf dist
+
 RUN mkdir dist
 
 RUN chown -R node ./dist
