@@ -10,7 +10,7 @@ This is an example of how to list things you need to use the beers-styles and ho
 
 ### directory path
 
-- /beers-styles
+- /karhub
 
 ```sh
 #beers-styles
