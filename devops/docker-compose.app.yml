@@ -1,0 +1,19 @@
+version: "3"
+networks:
+  beers-infra:
+    external: true
+services:
+  backend:
+    image: backend:${BUILD_ENV}
+    networks:
+      - beers-infra
+    expose:
+      - 3000
+    volumes:
+      - ../backend/src:/app/src
+      - ../backend/test:/app/test
+      - ../backend/.develop.env:/app/.develop.env
+    container_name: backend
+    hostname: backend
+    ports:
+      - "3000:3000"

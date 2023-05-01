@@ -1,0 +1,19 @@
+# Stages
+1 - Create payments network
+1 - Build all
+2 - Run docker-compose
+
+# Create payments network
+docker network create -d bridge --subnet  172.18.0.1/16 --gateway  172.18.0.1 beers-infra
+
+# Build one
+unset BUILD_ENV; export BUILD_ENV=local; bash -c 'docker build -t backend:$BUILD_ENV -f backend/devops/$BUILD_ENV.Dockerfile ./backend'
+
+# Run docker-compose
+unset BUILD_ENV; export BUILD_ENV=local; docker-compose -f devops/docker-compose.infra.yml --env-file=devops/.env up -d \
+&& unset BUILD_ENV; export BUILD_ENV=local; docker-compose -f devops/docker-compose.app.yml --env-file=devops/.env up -d
+
+# Down docker-compose
+unset BUILD_ENV; export BUILD_ENV=local; docker-compose -f devops/docker-compose.infra.yml --env-file=devops/.env down \
+&& unset BUILD_ENV; export BUILD_ENV=local; docker-compose -f devops/docker-compose.app.yml --env-file=devops/.env down
+
