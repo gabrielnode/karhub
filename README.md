@@ -2,15 +2,15 @@
 
 ## Stages
 
-- Create infra-uhuu network
+- Create beers-styles network
 - Build all
 - Run docker-compose
 
-This is an example of how to list things you need to use the api-uhuu and how to install them.
+This is an example of how to list things you need to use the beers-styles and how to install them.
 
 ### directory path
 
-- /beers-styles
+- /karhub
 
 ```sh
 #beers-styles
